@@ -1,0 +1,23 @@
+{
+  "name": "crud-node-js",
+  "version": "1.0.0",
+  "description": "crud-node-js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonKristanto/crud-node-js.git"
+  },
+  "author": "jasonkristanto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonKristanto/crud-node-js/issues"
+  },
+  "homepage": "https://github.com/jasonKristanto/crud-node-js#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
