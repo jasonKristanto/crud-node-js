@@ -4,7 +4,7 @@ const userDb = require('../../models/models');
 
 module.exports = {
   deleteUserService: (req, res) => {
-    userDb.deleteOne({username: req.params.username})
+    userDb.deleteOne({username: req.body.username})
       .then(data => {
         if (data.deletedCount > 0) {
           sendSuccessResponse(res, 'Successfully deleted user.');
