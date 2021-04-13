@@ -4,6 +4,8 @@ The usage of this API is divided by two according to the role of the user.
 - admin role user can access all of the endpoint
 - user role user can only access endpoint get
 
+=========================================================
+
 APPLICATION CREDENTIAL
 
 admin role user:
@@ -17,6 +19,10 @@ credential access token:
 mongo_uri:
 mongodb+srv://jason:arabic_happen_sailfish_honorary_sextuple_convince@jasoncluster.f9osy.mongodb.net/crud_app?retryWrites=true&w=majority
 
+=========================================================
+
+API DOCUMENTATION
+
 POST /login/admin or /login/user
 
 Request Body:
@@ -27,10 +33,10 @@ Response:
 - message: "Login Successfully"
 - data: []
 
-
 POST /logout
 
 Request Header: Bearer ACCESS_TOKEN
+
 Request Body: -
 
 Response:
@@ -41,6 +47,7 @@ Response:
 GET /users
 
 Request Header: Bearer ACCESS_TOKEN
+
 Request Body: -
 
 Response:
@@ -62,6 +69,7 @@ Response:
 GET /user
 
 Request Header: Bearer ACCESS_TOKEN
+
 Request Body: -
 
 Response:
@@ -79,9 +87,11 @@ Response:
     }
   ]
   
+  
 POST /user
 
 Request Header: Bearer ACCESS_TOKEN
+
 Request Body: {
   "username": String,
   "email": String, Email,
@@ -98,6 +108,7 @@ Response:
 PUT /user
 
 Request Header: Bearer ACCESS_TOKEN
+
 Request Body: {
   "username": String,
   "email": String, Email,
@@ -114,6 +125,7 @@ Response:
 DELETE /user
 
 Request Header: Bearer ACCESS_TOKEN
+
 Request Body: {
   "username": String
 }
