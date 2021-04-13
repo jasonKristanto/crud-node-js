@@ -1,15 +1,12 @@
-const {sendSuccessResponse, sendFailedResponse} = require('../helpers/responseHelpers');
-
 const services = require('../services/services');
+const {sendFailedResponse} = require('../helpers/responseHelpers');
 
-exports.login = (req, res) => {
-  console.log(req);
-  console.log(res);
-  sendSuccessResponse(res, 'hello login');
+exports.login = async (req, res) => {
+  await services.authServices.loginService(req, res);
 };
 
-exports.logout = (req, res) => {
-  sendSuccessResponse(res, 'hello logout');
+exports.logout = async (req, res) => {
+  await services.authServices.logoutService(req, res);
 };
 
 exports.getAllUsers = (req, res) => {

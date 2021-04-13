@@ -4,7 +4,8 @@ const userDb = require('../../models/models');
 
 module.exports = {
   getUserService: (req, res) => {
-    userDb.findOne({email: req.params.email})
+    console.log(req.user);
+    userDb.findOne({username: req.user.username})
       .then(user => {
         if (user) {
           sendSuccessResponse(res, 'Successfully get the user.', user);

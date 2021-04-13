@@ -6,7 +6,11 @@ module.exports = {
   getAllUsersService: (req, res) => {
     userDb.find()
       .then(user => {
-        sendSuccessResponse(res, 'Successfully get all users.', user);
+        if (user.length > 0) {
+          sendSuccessResponse(res, 'Successfully get all users.', user);
+        } else {
+          sendFailedResponse(res, 404, 'There aren\'t any data');
+        }
       })
       .catch(e => {
         console.log(e);
