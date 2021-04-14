@@ -9,6 +9,10 @@ exports.logout = async (req, res) => {
   await services.authServices.logoutService(req, res);
 };
 
+exports.refreshToken = async (req, res) => {
+  await services.authServices.refreshTokenService(req, res);
+};
+
 exports.getAllUsers = (req, res) => {
   services.userServices.getAllUsersService(req, res);
 };
