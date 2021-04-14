@@ -14,28 +14,32 @@ module.exports = {
     if (user) {
       bcrypt.compare(req.body.password, user.password).then((isPasswordMatched) => {
         if (isPasswordMatched === true) {
-          let accessTokenSecret;
+          let accessTokenSecret, refreshTokenSecret;
           console.log(user);
           if (req.originalUrl === '/login/user' && user.role === 'user') {
             accessTokenSecret = process.env.USER_ACCESS_TOKEN_SECRET;
+            refreshTokenSecret = process.env.USER_REFRESH_TOKEN_SECRET;
           } else if (req.originalUrl === '/login/admin' && user.role === 'admin') {
             accessTokenSecret = process.env.ADMIN_ACCESS_TOKEN_SECRET;
+            refreshTokenSecret = process.env.ADMIN_REFRESH_TOKEN_SECRET;
           } else {
             accessTokenSecret = '';
+            refreshTokenSecret = '';
           }
 
-          if (accessTokenSecret.length > 0) {
-            const accessToken = jwt.sign(user.toJSON(), accessTokenSecret);
+          if (accessTokenSecret.length > 0 && refreshTokenSecret.length > 0) {
+            const accessToken = jwt.sign(user.toJSON(), accessTokenSecret, {expiresIn: '15s'});
+            const refreshToken = jwt.sign(user.toJSON(), refreshTokenSecret);
 
             const token = new tokenDb({
               username: req.body.username,
-              token: accessToken
+              token: refreshToken
             });
 
             token.save();
 
             sendSuccessResponse(res, 'Login Successful', {
-              accessToken
+              accessToken, refreshToken
             });
           } else {
             sendFailedResponse(res, 401, 'Unauthorized')

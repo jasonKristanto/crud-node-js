@@ -18,7 +18,7 @@ module.exports = {
 
     if (isUserTokenExists) {
       tokenDb.deleteMany({
-        token: token
+        username: req.user.username
       })
         .then(data => {
           if (data.deletedCount > 0) {
