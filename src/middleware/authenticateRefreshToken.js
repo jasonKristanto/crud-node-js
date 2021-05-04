@@ -19,14 +19,7 @@ exports.authenticateRefreshToken = async (req, res, next) => {
         req.user = user;
         next();
       } else {
-        jwt.verify(token, process.env.ADMIN_REFRESH_TOKEN_SECRET, (err, admin) => {
-          if (!err) {
-            req.user = admin;
-            next();
-          } else {
-            sendFailedResponse(res, 403, 'Invalid token');
-          }
-        });
+        sendFailedResponse(res, 403, 'Invalid token');
       }
     });
   }

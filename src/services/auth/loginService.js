@@ -16,10 +16,10 @@ module.exports = {
         if (isPasswordMatched === true) {
           let accessTokenSecret, refreshTokenSecret;
           console.log(user);
-          if (req.originalUrl === '/login/user' && user.role === 'user') {
+          if (req.originalUrl === '/user/login' && user.role === 'user') {
             accessTokenSecret = process.env.USER_ACCESS_TOKEN_SECRET;
             refreshTokenSecret = process.env.USER_REFRESH_TOKEN_SECRET;
-          } else if (req.originalUrl === '/login/admin' && user.role === 'admin') {
+          } else if (req.originalUrl === '/admin/login' && user.role === 'admin') {
             accessTokenSecret = process.env.ADMIN_ACCESS_TOKEN_SECRET;
             refreshTokenSecret = process.env.ADMIN_REFRESH_TOKEN_SECRET;
           } else {

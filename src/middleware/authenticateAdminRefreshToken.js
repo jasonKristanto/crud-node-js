@@ -1,18 +1,22 @@
 const {sendFailedResponse} = require('../helpers/responseHelpers');
 
 const jwt = require('jsonwebtoken');
+const tokenDb = require('../models/tokenModels');
 
-exports.authenticateToken = async (req, res, next) => {
+exports.authenticateAdminRefreshToken = async (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
 
-  if (!token) {
+  const isUserTokenExists = await tokenDb.exists({
+    token: token
+  });
+
+  if (!token || !isUserTokenExists) {
     sendFailedResponse(res, 401, 'Invalid token');
   } else {
-    jwt.verify(token, process.env.USER_ACCESS_TOKEN_SECRET, (err, user) => {
-      console.log(err)
+    jwt.verify(token, process.env.ADMIN_REFRESH_TOKEN_SECRET, (err, admin) => {
       if (!err) {
-        req.user = user;
+        req.user = admin;
         next();
       } else {
         sendFailedResponse(res, 403, 'Invalid token');

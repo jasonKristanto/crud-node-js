@@ -3,19 +3,25 @@ const routes = express.Router();
 
 const controller = require('../controllers/controller');
 const {authenticateToken} = require('../middleware/authenticateUser');
-const {authenticateAdminToken} = require('../middleware/authenticateAdmin');
 const {authenticateRefreshToken} = require('../middleware/authenticateRefreshToken');
+const {authenticateAdminToken} = require('../middleware/authenticateAdmin');
+const {authenticateAdminRefreshToken} = require('../middleware/authenticateAdminRefreshToken');
 
-routes.post('/login/user', controller.login);
-routes.post('/login/admin', controller.login);
+/* Admin Routes */
+routes.post('/admin/login', controller.login);
+routes.post('/admin/token', authenticateAdminRefreshToken, controller.refreshToken);
+routes.post('/admin/logout', authenticateRefreshToken, controller.logout);
+routes.get('/admin/users', authenticateAdminToken, controller.getAllUsers);
+routes.post('/admin/user', authenticateAdminToken, controller.createUser);
+routes.put('/admin/user', authenticateAdminToken, controller.updateUser);
+routes.delete('/admin/user', authenticateAdminToken, controller.deleteUser);
+routes.get('/admin/user', authenticateAdminToken, controller.getUser);
 
-routes.get('/users', authenticateAdminToken, controller.getAllUsers);
-routes.post('/user', authenticateAdminToken, controller.createUser);
-routes.put('/user', authenticateAdminToken, controller.updateUser);
-routes.delete('/user', authenticateAdminToken, controller.deleteUser);
 
-routes.post('/token', authenticateRefreshToken, controller.refreshToken);
-routes.post('/logout', authenticateRefreshToken, controller.logout);
+/* User Routes */
+routes.post('/user/login', controller.login);
+routes.post('/user/token', authenticateRefreshToken, controller.refreshToken);
+routes.post('/user/logout', authenticateRefreshToken, controller.logout);
 routes.get('/user', authenticateToken, controller.getUser);
 
 routes.use('/', controller.fallback);
