@@ -9,7 +9,7 @@ module.exports = {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
-        useCreateIndex: true
+        useCreateIndex: true,
       });
 
       console.log(`MongoDB connected: ${connection.connection.host}`);
@@ -18,4 +18,4 @@ module.exports = {
       process.exit(1);
     }
   },
-}
+};

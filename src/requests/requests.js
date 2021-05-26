@@ -1,4 +1,4 @@
-const {validateUserRequest} = require('./users/userRequest');
+const { validateUserRequest } = require('./users/user-request');
 
 module.exports = {
   validateUserRequest,

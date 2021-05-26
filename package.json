@@ -4,8 +4,9 @@
   "description": "crud-node-js",
   "main": "app.js",
   "scripts": {
-    "start": "node ./src/app.js",
-    "start dev": "node ./node_modules/nodemon/bin/nodemon.js ./src/app.js"
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,9 @@
     "validator": "^13.5.2"
   },
   "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.3",
     "nodemon": "^2.0.7"
   }
 }
