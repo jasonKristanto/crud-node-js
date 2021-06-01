@@ -6,7 +6,11 @@ module.exports = {
       return false;
     }
 
-    if (validator.isEmpty(req.body.username) || validator.isEmpty(req.body.email) || validator.isEmpty(req.body.password)) {
+    if (
+      validator.isEmpty(req.body.username)
+      || validator.isEmpty(req.body.email)
+      || validator.isEmpty(req.body.password)
+    ) {
       return false;
     }
 

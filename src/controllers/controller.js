@@ -1,38 +1,58 @@
 const services = require('../services/services');
-const {sendFailedResponse} = require('../helpers/responseHelpers');
+const { sendResponse } = require('../helpers/response-helpers');
 
 exports.login = async (req, res) => {
-  await services.authServices.loginService(req, res);
+  const result = await services.authServices.loginService(req);
+
+  sendResponse(res, result);
 };
 
 exports.logout = async (req, res) => {
-  await services.authServices.logoutService(req, res);
+  const result = await services.authServices.logoutService(req);
+
+  sendResponse(res, result);
 };
 
 exports.refreshToken = async (req, res) => {
-  await services.authServices.refreshTokenService(req, res);
+  const result = await services.authServices.refreshTokenService(req);
+
+  sendResponse(res, result);
 };
 
-exports.getAllUsers = (req, res) => {
-  services.userServices.getAllUsersService(req, res);
+exports.getAllUsers = async (req, res) => {
+  const result = await services.userServices.getAllUsersService();
+
+  sendResponse(res, result);
 };
 
-exports.getUser = (req, res) => {
-  services.userServices.getUserService(req, res);
+exports.getUser = async (req, res) => {
+  const result = await services.userServices.getUserService(req);
+
+  sendResponse(res, result);
 };
 
-exports.deleteUser = (req, res) => {
-  services.userServices.deleteUserService(req, res);
+exports.deleteUser = async (req, res) => {
+  const result = await services.userServices.deleteUserService(req);
+
+  sendResponse(res, result);
 };
 
 exports.createUser = async (req, res) => {
-  await services.userServices.createUserService(req, res);
+  const result = await services.userServices.createUserService(req);
+
+  sendResponse(res, result);
 };
 
 exports.updateUser = async (req, res) => {
-  await services.userServices.updateUserService(req, res);
+  const result = await services.userServices.updateUserService(req);
+
+  sendResponse(res, result);
 };
 
 exports.fallback = (req, res) => {
-  sendFailedResponse(res, 404, 'Page Not Found');
+  sendResponse(res, {
+    statusCode: 404,
+    message: 'Page Not Found',
+    data: [],
+  });
 };
