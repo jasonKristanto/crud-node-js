@@ -67,7 +67,7 @@ npm install
 `POST /admin/login`
 
 **Request body**
-```json
+```js
 {
   "username": String,
   "password": String
@@ -94,6 +94,8 @@ Example:
 
 **Note** Access token only last for 15 minutes, and after that, you must refresh the token.
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 ### Admin Refresh token
 
 `POST /admin/token`
@@ -112,6 +114,8 @@ Example:
 }
 ```
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 ### Admin Logout
 
 `POST /admin/logout`
@@ -127,6 +131,8 @@ Example:
   "data": []
 }
 ```
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 ### Admin get all users
 
@@ -175,6 +181,8 @@ Example:
 }
 ```
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 ### Admin get user
 
 `GET /admin/user`
@@ -199,6 +207,8 @@ Example:
   }
 }
 ```
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 ### Admin create new user
   
@@ -225,6 +235,8 @@ Example:
 }
 ```
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 ### Admin update existing user
 
 `PUT /admin/user`
@@ -242,6 +254,8 @@ Example:
 }
 ```
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 **Success response**:
 ```json
 {
@@ -249,6 +263,8 @@ Example:
 "data": []
 }
 ```
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 ### Admin delete existing user
 
@@ -309,6 +325,8 @@ Example:
 
 **Note** Access token only last for 15 minutes, and after that, you must refresh the token.
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 ### User refresh token
 
 `POST /user/token`
@@ -327,6 +345,8 @@ Example:
 }
 ```
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 ### User logout
 
 `POST /user/logout`
@@ -342,6 +362,8 @@ Example:
   "data": []
 }
 ```
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 ### User get user
 
