@@ -62,7 +62,7 @@ npm install
 
 ## Admin
 
-### Login
+### Admin Login
 
 `POST /admin/login`
 
@@ -94,7 +94,7 @@ Example:
 
 **Note** Access token only last for 15 minutes, and after that, you must refresh the token.
 
-### Refresh token
+### Admin Refresh token
 
 `POST /admin/token`
 
@@ -112,7 +112,7 @@ Example:
 }
 ```
 
-### Logout
+### Admin Logout
 
 `POST /admin/logout`
 
@@ -128,7 +128,7 @@ Example:
 }
 ```
 
-### Get all users
+### Admin get all users
 
 `GET /admin/users`
 
@@ -175,7 +175,7 @@ Example:
 }
 ```
 
-### Get user
+### Admin get user
 
 `GET /admin/user`
 
@@ -200,7 +200,7 @@ Example:
 }
 ```
 
-### Create new user
+### Admin create new user
   
 `POST /admin/user`
 
@@ -225,7 +225,7 @@ Example:
 }
 ```
 
-### Update existing user
+### Admin update existing user
 
 `PUT /admin/user`
 
@@ -250,7 +250,7 @@ Example:
 }
 ```
 
-### Delete existing user
+### Admin delete existing user
 
 `DELETE /admin/user`
 
@@ -277,7 +277,7 @@ Example:
 
 ## User
 
-### Login
+### User login
 
 `POST /user/login`
 
@@ -309,7 +309,7 @@ Example:
 
 **Note** Access token only last for 15 minutes, and after that, you must refresh the token.
 
-### Refresh token
+### User refresh token
 
 `POST /user/token`
 
@@ -327,7 +327,7 @@ Example:
 }
 ```
 
-### Logout
+### User logout
 
 `POST /user/logout`
 
@@ -343,7 +343,7 @@ Example:
 }
 ```
 
-### Get user
+### User get user
 
 `GET /user/user`
 
