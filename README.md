@@ -29,7 +29,7 @@ mongodb+srv://jason:arabic_happen_sailfish_honorary_sextuple_convince@jasonclust
 
 ## API DOCUMENTATION
 
-### Table of Contents
+## Table of Contents
 
 - [API Documentation](#api-documentation)
 - [Installation](#installation)
@@ -50,7 +50,7 @@ mongodb+srv://jason:arabic_happen_sailfish_honorary_sextuple_convince@jasonclust
   
 
 
-### Installation
+## Installation
 
 To use this repo, you can clone this repo first. Then, you can install the dependencies using this command.
 
@@ -60,7 +60,7 @@ npm install
 
 ---
 
-### Admin
+## Admin
 
 ### Login
 
@@ -271,9 +271,11 @@ Example:
 }
 ```
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 ---
 
-### User
+## User
 
 ### Login
 
