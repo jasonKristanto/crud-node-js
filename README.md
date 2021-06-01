@@ -217,7 +217,7 @@ Example:
 **Request header** `Bearer ACCESS_TOKEN`
 
 **Request Body**
-```json
+```js
 {
   "username": String,
   "email": String, Email,
@@ -244,7 +244,7 @@ Example:
 **Request header** `Bearer ACCESS_TOKEN`
 
 **Request Body**
-```json
+```js
 {
   "username": String,
   "email": String, Email,
@@ -273,7 +273,7 @@ Example:
 **Request header** `Bearer ACCESS_TOKEN`
 
 **Request Body**
-```json
+```js
 {
   "username": String
 }
@@ -298,7 +298,7 @@ Example:
 `POST /user/login`
 
 **Request body**
-```json
+```js
 {
   "username": String,
   "password": String
